@@ -1,5 +1,7 @@
 function output_StimData = copy_Stim_VoltageClampSeries(input_acquisitionData)
 
+%%% imput_acquisitionData: single index_xx from the nwb file 
+%%% output_acquisitionData: uncompressed nwb data, that contains the parameters 
 
 StimData = input_acquisitionData;
 
@@ -24,7 +26,7 @@ extracted.starting_time_rate = StimData.starting_time_rate;
 extracted.timestamps = StimData.timestamps;
 
 
-%% compress and write 2nd attempt, EZ voltage response kiszedése
+%% compress and write
 RawStimData = StimData.data.load;
 
 fData_compressed=types.untyped.DataPipe('data', RawStimData.');

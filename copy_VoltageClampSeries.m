@@ -1,7 +1,7 @@
 function output_acquisitionData = copy_VoltageClampSeries (input_acquisitionData)
 
-%%% bemeneti adatsor az nwb file-ból egyetlen series (index_xx). 
-%%% Ezt a bementi file-t egy tömörítetlen kimeneti file-á alakítja. 
+%%% imput_acquisitionData: single index_xx from the nwb file 
+%%% output_acquisitionData: uncompressed nwb data, that contains the parameters 
 
 acquisitionData = input_acquisitionData;
 
@@ -39,7 +39,7 @@ extracted.starting_time = acquisitionData.starting_time;
 extracted.starting_time_rate = acquisitionData.starting_time_rate;
 extracted.timestamps = acquisitionData.timestamps;
 
-%% compress and write 2nd attempt, EZ voltage response kiszedése
+%% compress and write 2nd attempt
 RawStimData = acquisitionData.data.load;
 
 fData_compressed=types.untyped.DataPipe('data', RawStimData.');

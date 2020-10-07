@@ -1,5 +1,8 @@
 function output_acquisitionData = copy_CurrentClampSeries(input_acquisitionData)
 
+%%% imput_acquisitionData: single index_xx from the nwb file 
+%%% output_acquisitionData: uncompressed nwb data, that contains the parameters 
+
 acquisitionData = input_acquisitionData;
 
 extraceted.bias_current = acquisitionData.bias_current;
@@ -25,7 +28,7 @@ extracted.starting_time_rate = acquisitionData.starting_time_rate;
 extracted.timestamps = acquisitionData.timestamps;
 
 
-%% compress and write 2nd attempt, EZ currentseries response kiszedése
+%% compress and write
 RawStimData = acquisitionData.data.load;
 
 fData_compressed=types.untyped.DataPipe('data', RawStimData.');
